@@ -1,12 +1,11 @@
 #!/bin/bash
 
-if [ $# -ne 3 ]; then
+if [ $# -lt 3 ]; then
     echo usage: $0 \<example.com\> \<test@example.com\> \<token\>
     exit 1
 fi
 
-PERL5LIB=$(dirname $0)/lib:$PERL5LIB
-
+PERL5LIB=$(dirname $0)/lib:$PERL5LIB \
 le.pl \
   --key account.key \
   --csr "$1.csr" \
@@ -18,7 +17,7 @@ le.pl \
   --handle-as dns \
   --handle-with Crypt::LE::Challenge::DigitalOcean \
   --handle-params "{\"token\":\"$3\"}" \
-  --renew 30 \
   --debug \
   --live \
-  --api 2
+  --api 2 \
+  ${@:4}
