@@ -21,3 +21,7 @@ le.pl \
   --live \
   --api 2 \
   ${@:4}
+
+if [ "$1.pem" -ot "$1.crt" ]; then
+    cat "$1.key" "$1.crt" > "$1.pem"
+fi
