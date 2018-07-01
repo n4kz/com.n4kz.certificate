@@ -22,5 +22,3 @@ le.pl \
   --debug \
   --live \
   --api 2
-
-# --live
