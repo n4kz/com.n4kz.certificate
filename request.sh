@@ -15,7 +15,6 @@ le.pl \
   --crt "$1.crt" \
   --generate-missing \
   --email "$2" \
-  --domains "*.${1}, ${1}" \
   --handle-as dns \
   --handle-with Crypt::LE::Challenge::DigitalOcean \
   --handle-params "{\"token\":\"$3\"}" \
