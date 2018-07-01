@@ -5,6 +5,8 @@ if [ $# -lt 3 ]; then
     exit 1
 fi
 
+umask 077
+
 PERL5LIB=$(dirname $0)/lib:$PERL5LIB \
 le.pl \
   --key account.key \
