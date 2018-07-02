@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -lt 3 ]; then
-    echo usage: $0 \<example.com\> \<test@example.com\> \<token\>
+    echo usage: $0 \<example.com\> \<test@example.com\> \<token\> --domains \"*.example.com\"
     exit 1
 fi
 
