@@ -21,7 +21,7 @@ sub handle_challenge_dns {
 
 	try {
 		my $do = DigitalOcean
-			->new(oauth_token => $params->{'token'});
+			->new(oauth_token => $params->{'handle-params'}{'token'});
 
 		my $domain = $do->domain($name);
 
@@ -47,7 +47,7 @@ sub handle_verification_dns {
 
 	try {
 		my $do = DigitalOcean
-			->new(oauth_token => $params->{'token'});
+			->new(oauth_token => $params->{'handle-params'}{'token'});
 
 		my $records = $do->domain($name)
 			->records();
