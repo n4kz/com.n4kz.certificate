@@ -33,6 +33,7 @@ sub handle_challenge_dns {
 
 		sleep 2;
 	} catch {
+		warn "Challenge failed: $_";
 		return 0;
 	};
 
@@ -58,6 +59,7 @@ sub handle_verification_dns {
 			$record->delete();
 		}
 	} catch {
+		warn "Verification failed: $_";
 		return 0;
 	};
 
