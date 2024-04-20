@@ -58,6 +58,8 @@ sub handle_verification_dns {
 
 			$record->delete();
 		}
+
+		sleep 2;
 	} catch {
 		warn "Verification failed: $_";
 		return 0;
